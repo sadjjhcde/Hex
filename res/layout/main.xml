@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="match_parent"
+              android:id="@+id/mainlayuot" android:longClickable="false">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:text="Here will be player name! Maybe..."
+            android:id="@+id/textView" android:editable="false" android:layout_gravity="center"
+            android:textColor="@android:color/black"/>
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_gravity="center_horizontal|top"
+            android:layout_weight="100">
+
+        <view android:layout_width="fill_parent"
+              android:layout_height="0dp"
+              class="ru.game.Hex.GameField" android:id="@+id/game_field" android:layout_weight="80"/>
+
+        <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="0dp" android:id="@+id/linearLayout" android:longClickable="false"
+                android:layout_weight="20">
+            <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" android:layout_gravity="center_horizontal|top">
+                <ImageButton
+                        android:layout_width="50dp"
+                        android:layout_height="55dp"
+                        android:id="@+id/hexImage1" android:layout_gravity="center_horizontal|top"
+                        android:clickable="false" android:longClickable="true" android:layout_margin="5dp"/>
+                <ImageButton
+                        android:layout_width="50dp"
+                        android:layout_height="30dp"
+                        android:id="@+id/rotateButton1" android:layout_gravity="center_horizontal|top"
+                        android:layout_margin="5dp"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content" android:layout_gravity="center_horizontal|top">
+                <ImageButton android:layout_width="50dp" android:layout_height="55dp" android:id="@+id/hexImage2"
+                             android:layout_gravity="center_horizontal|top" android:clickable="false"
+                             android:longClickable="false" android:layout_margin="5dp"/>
+                <ImageButton android:layout_width="50dp" android:layout_height="30dp"
+                             android:id="@+id/rotateButton2" android:layout_gravity="center_horizontal|top"
+                             android:layout_margin="5dp"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content" android:layout_gravity="center_horizontal|top">
+                <ImageButton android:layout_width="50dp" android:layout_height="55dp" android:id="@+id/hexImage3"
+                             android:layout_gravity="center_horizontal|top" android:clickable="false"
+                             android:longClickable="false" android:layout_margin="5dp"/>
+                <ImageButton android:layout_width="50dp" android:layout_height="30dp"
+                             android:id="@+id/rotateButton3" android:layout_gravity="center_horizontal|top"
+                             android:layout_margin="5dp"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content" android:layout_gravity="center_horizontal|top">
+                <ImageButton android:layout_width="50dp" android:layout_height="55dp"
+                             android:id="@+id/hexImage4" android:layout_gravity="left|center_vertical"
+                             android:clickable="false" android:longClickable="false" android:layout_margin="5dp"/>
+                <ImageButton android:layout_width="50dp" android:layout_height="30dp"
+                             android:id="@+id/rotateButton4" android:layout_gravity="center_horizontal|top"
+                             android:layout_margin="5dp"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_horizontal|top">
+                <ImageButton android:layout_width="50dp" android:layout_height="55dp"
+                             android:id="@+id/hexImage5" android:layout_gravity="center_horizontal|top"
+                             android:layout_margin="5dp"/>
+                <ImageButton android:layout_width="50dp" android:layout_height="30dp"
+                             android:id="@+id/rotateButton5" android:layout_gravity="center_horizontal|top"
+                             android:layout_margin="5dp"/>
+            </LinearLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:layout_gravity="center_horizontal|top">
+                <ImageButton android:layout_width="50dp" android:layout_height="55dp"
+                             android:id="@+id/hexImage6"
+                             android:layout_gravity="center_horizontal|top" android:layout_margin="5dp"/>
+                <ImageButton android:layout_width="50dp" android:layout_height="30dp"
+                             android:id="@+id/rotateButton6"
+                             android:layout_gravity="center_horizontal|top"
+                             android:layout_margin="5dp"/>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
+
+
