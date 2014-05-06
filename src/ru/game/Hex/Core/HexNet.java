@@ -91,13 +91,18 @@ public class HexNet {
         }
     }
 
+    private static int mainHexPaths[] = {3 ,4 ,5 ,0 ,1 ,2};
+
     public boolean validateHex(Hex hex, List<Path> paths) {
-        int mainHexPaths[] = {3 ,4 ,5 ,0 ,1 ,2};
         int pathPosition = 0;
+        boolean overlapExist = false;
         for (Hex surHex : getSurroindingHexes(hex)){
             if (paths.get(mainHexPaths[pathPosition]).exist()){
                 if (surHex.isDrawed() && surHex.getPaths()!=null && !surHex.getPaths().get(pathPosition).exist()){
                     return false;
+                }
+                if (surHex.isDrawed() && surHex.getPaths()!=null && surHex.getPaths().get(pathPosition).exist()){
+                    overlapExist = true;
                 }
             }
             if (surHex.getPaths()!=null && surHex.getPaths().get(pathPosition).exist() && !paths.get(mainHexPaths[pathPosition]).exist()){
@@ -105,7 +110,7 @@ public class HexNet {
             }
             pathPosition++;
         }
-        return true;
+        return overlapExist;
     }
 
 }

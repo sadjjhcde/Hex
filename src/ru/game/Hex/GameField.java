@@ -1,15 +1,18 @@
 package ru.game.Hex;
 
+import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Color;
-import android.graphics.Paint;
+import android.graphics.*;
 import android.util.AttributeSet;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import ru.game.Hex.Core.*;
+import ru.game.Hex.Core.Figure.Circle;
+import ru.game.Hex.Core.Path;
 import ru.game.Hex.Util.Randomizer;
 
 public class GameField extends View {
@@ -60,10 +63,6 @@ public class GameField extends View {
     private final GestureDetector detector;
 
     private boolean firstDraw = true;
-//
-//    protected void init() {
-//        setWillNotDraw(false);
-//    }
 
     @Override
     protected void onDraw(Canvas canvas) {
@@ -82,8 +81,6 @@ public class GameField extends View {
         }
 
         canvas.drawBitmap(fieldBitmap, bitmapXPos, bitmapYPos, null);
-        //postInvalidate();
-        //System.out.println("drawOn");
     }
 
     @Override
@@ -133,29 +130,25 @@ public class GameField extends View {
                         hexButtonGetter.clearSelected();
                         hexNet.drawSurroundingHexes(selectedHex);
                     } else {
-                        /*System.out.println("1");
-                        selectedHex.setFigure(new Cross(), Color.RED);
-                        selectedHex.drawHex();
-                        System.out.println("1.5");
-                        try {
-                            Thread.sleep(3000);
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                        System.out.println("1.7");
-                        selectedHex.setFigure(null, Color.WHITE);
-                        selectedHex.drawHex();  */
+
+//                        AlphaAnimation alphaAnimation = new AlphaAnimation();
+//                        android.graphics.Path path = new android.graphics.Path();
+//                        ObjectAnimator animator = ObjectAnimator.ofO
+////                        selectedHex.drawBackground(Color.RED);
+////                        try {
+////                            Thread.sleep(2000);
+////                        } catch (InterruptedException e) {
+////                            e.printStackTrace();
+////                        }
+////                        selectedHex.drawHex();
+////                        drawWarning = true;
                         System.out.println("NOPE");
                     }
                 }
-                System.out.println("3");
-
                 postInvalidate();
             }
-
             return true;
         }
-
     }
 }
 

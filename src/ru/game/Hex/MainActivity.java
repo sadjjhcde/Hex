@@ -8,6 +8,7 @@ import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import ru.game.Hex.Core.Hex;
 import ru.game.Hex.Core.HexButtonsContainer;
 import ru.game.Hex.Core.Path;

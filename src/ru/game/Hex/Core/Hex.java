@@ -10,12 +10,12 @@ import java.util.List;
 
 public class Hex {
 
-    private static Paint fontPaint;
+    private static Paint defaultBackgroundPaint;
 
     static {
-        fontPaint = new Paint();
-        fontPaint.setColor(Color.WHITE);
-        fontPaint.setStyle(Paint.Style.FILL);
+        defaultBackgroundPaint = new Paint();
+        defaultBackgroundPaint.setColor(Color.WHITE);
+        defaultBackgroundPaint.setStyle(Paint.Style.FILL);
     }
 
     public static float magicNumber = (float) Math.sqrt(0.75);
@@ -109,6 +109,32 @@ public class Hex {
 
     public void drawHex() {
 
+        android.graphics.Path path = getHexPath();
+
+        canvas.drawPath(path, defaultBackgroundPaint);
+        canvas.drawPath(path, borderPaint);
+
+        isDrawed = true;
+
+        if (paths != null){
+            drawPaths();
+        }
+        if (figure != null){
+            figure.draw(bitmapXPos, bitmapYPos, radius, canvas, figureColor);
+            isFilled = true;
+        }
+    }
+
+    public void drawBackground(int color){
+        android.graphics.Path path = getHexPath();
+        Paint backgroundPaint = new Paint();
+        backgroundPaint.setColor(color);
+        backgroundPaint.setStyle(Paint.Style.FILL);
+        canvas.drawPath(path, backgroundPaint);
+        canvas.drawPath(path, borderPaint);
+    }
+
+    private android.graphics.Path getHexPath(){
         android.graphics.Path path = new android.graphics.Path();
         path.setFillType(android.graphics.Path.FillType.EVEN_ODD);
 
@@ -138,18 +164,7 @@ public class Hex {
                 bitmapYPos - radius / 2);
         path.close();
 
-        canvas.drawPath(path, fontPaint);
-        canvas.drawPath(path, borderPaint);
-
-        isDrawed = true;
-
-        if (paths != null){
-            drawPaths();
-        }
-        if (figure != null){
-            figure.draw(bitmapXPos, bitmapYPos, radius, canvas, figureColor);
-            isFilled = true;
-        }
+        return path;
     }
 
     public void redrawHex(Hex hex, int pathStrokeWidth){
